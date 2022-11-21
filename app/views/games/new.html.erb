@@ -1,0 +1,15 @@
+<h1>New game</h1>
+<div class="container d-flex">
+<% @letters.each do |letter| %>
+  <div class="p-4 border m-2 rounded"><%= letter %></div>
+<% end %>
+</div>
+
+<div id="form" class="">
+<form class="input-group" action="/score" method="TODO" data-turbo="false">
+<input class="rounded" type="text" name="word" placeholder="Enter your word here...">
+<input type="submit" value="Submit!">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= hidden_field_tag :letters, @letters %>
+</form>
+</div>
